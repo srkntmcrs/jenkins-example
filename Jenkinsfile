@@ -12,24 +12,24 @@ pipeline {
             }
         }
 
-        stage ('Testing Stage') {
+       // stage ('Testing Stage') {
 
-            steps {
-              sh 'mvn test'
+       //     steps {
+//sh 'mvn test'
                 //withMaven(maven : 'maven_3_5_0') {
                 //
                 //}
-            }
-        }
+          //  }
+    //    }
 
 
-        stage ('Deployment Stage') {
-            steps {
-              sh 'mvn deploy'
+    //    stage ('Deployment Stage') {
+       //     steps {
+        //      sh 'mvn deploy'
                 //withMaven(maven : 'maven_3_5_0') {
                   //
                 //}
-            }
-        }
+       //     }
+     //   }
     }
 }
