@@ -5,31 +5,32 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-            sh 'mvn clean compile'
+                // for windows slaves, use "bat" instead of "sh"
+            bat 'mvn clean compile'
                 //withMaven(maven : 'maven_3_5_0') {
                   //
                 //}
             }
         }
 
-       // stage ('Testing Stage') {
+        stage ('Testing Stage') {
 
-       //     steps {
-//sh 'mvn test'
+            steps {
+                 bat 'mvn test'
                 //withMaven(maven : 'maven_3_5_0') {
                 //
                 //}
-          //  }
-    //    }
+            }
+        }
 
 
-    //    stage ('Deployment Stage') {
-       //     steps {
-        //      sh 'mvn deploy'
+        stage ('Deployment Stage') {
+             steps {
+              bat 'mvn deploy'
                 //withMaven(maven : 'maven_3_5_0') {
                   //
                 //}
-       //     }
-     //   }
+            }
+        }
     }
 }
